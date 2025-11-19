@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Surprise for Shaheeda!</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #fce4ec; /* Light pink background */
+            text-align: center;
+            transition: background-color 0.5s;
+        }
+
+        #button-container {
+            transition: opacity 0.5s;
+        }
+
+        #open-button {
+            padding: 20px 40px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background-color: #d81b60; /* Deep pink */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        #open-button:hover {
+            background-color: #ad1457;
+            transform: translateY(-2px);
+        }
+
+        #message-container {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 1s, transform 1s;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 90%;
+            display: none; /* Hidden by default */
+        }
+
+        .show-message {
+            opacity: 1 !important;
+            transform: scale(1) !important;
+            display: block !important;
+        }
+
+        h1 {
+            color: #d81b60;
+            font-size: 3em;
+        }
+
+        p {
+            color: #4a4a4a;
+            font-size: 1.5em;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #ffb300; /* Gold color */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="button-container">
+        <button id="open-button" onclick="revealMessage()">
+            PRESS ME FOR A SURPRISE!
+        </button>
+    </div>
+
+    <div id="message-container">
+        <h1 class="animate__animated animate__heartBeat">🥳 Happy 51st Birthday, Shaheeda! 🎉</h1>
+        
+        <p>
+            You are officially <span class="highlight">30 years old</span>... with <span class="highlight">21 years</span> of **experience** added. 😉 
+            <br><br>
+            Don't worry, 51 is the new 'I can't remember why I walked into this room' (just kidding!).
+            <br>
+            Hope your day is filled with joy, laughter, and zero unsolicited advice.
+            <br><br>
+            Love always, [Your Name]
+        </p>
+    </div>
+
+    <script>
+        function revealMessage() {
+            // 1. Hide the button and make it inaccessible
+            const buttonContainer = document.getElementById('button-container');
+            buttonContainer.style.opacity = '0';
+            setTimeout(() => {
+                buttonContainer.style.display = 'none';
+            }, 500); // Wait for fade out
+
+            // 2. Show the message container with animation
+            const messageContainer = document.getElementById('message-container');
+            // Wait a moment to ensure button is hidden before showing message
+            setTimeout(() => {
+                messageContainer.classList.add('show-message');
+            }, 600); 
+        }
+    </script>
+
+</body>
+</html>
